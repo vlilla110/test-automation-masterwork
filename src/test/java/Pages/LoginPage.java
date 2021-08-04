@@ -28,6 +28,10 @@ public class LoginPage {
         return driver.findElement(By.id("wp-submit"));
     }
 
+    public WebElement getErrorMessage() {
+        return driver.findElement(By.id("login_error"));
+    }
+
     public void login(String userName, String password) {
         getUserName().clear();
         getPassword().clear();
@@ -35,5 +39,4 @@ public class LoginPage {
         getPassword().sendKeys(password);
         getLoginButton().click();
     }
-
 }

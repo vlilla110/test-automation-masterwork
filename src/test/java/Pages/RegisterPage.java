@@ -45,6 +45,10 @@ public class RegisterPage {
         return driver.findElement(By.className("um-field-checkbox-state"));
     }
 
+    public WebElement getPrivacyCheckBoxStatus() {
+        return driver.findElement(By.name("privacy_statement[]"));
+    }
+
     public WebElement getPrivacyLink() {
         return driver.findElement(By.linkText("Show Privacy Statement"));
     }
@@ -53,15 +57,22 @@ public class RegisterPage {
         return driver.findElement(By.id("um-submit-btn"));
     }
 
+    public WebElement getErrorMessage() {
+        return driver.findElement(By.className("um-field-error"));
+    }
+
+    public void openPrivacyStatement() {
+        String clickLink = Keys.chord(Keys.CONTROL,Keys.ENTER);
+        getPrivacyLink().sendKeys(clickLink);
+    }
+
+    public void checkPrivacyStatement() {
+        getPrivacyCheckBox().click();
+    }
+
     public void register(String userName, String firstName, String lastName, String email, String password) {
         getUserNameInput().sendKeys(userName);
         registerWithoutUserName(firstName, lastName, email, password);
-    }
-
-    public void openAndCheckPrivacyStatement() {
-        String clickLink = Keys.chord(Keys.CONTROL,Keys.ENTER);
-        getPrivacyLink().sendKeys(clickLink);
-        getPrivacyCheckBox().click();
     }
 
     public void registerWithoutUserName(String firstName, String lastName, String email, String password) {
@@ -70,7 +81,8 @@ public class RegisterPage {
         getEmailInput().sendKeys(email);
         getPasswordInput().sendKeys(password);
         getConfirmInput().sendKeys(password);
-        openAndCheckPrivacyStatement();
+        openPrivacyStatement();
+        checkPrivacyStatement();
         getRegisterButton().click();
     }
 }

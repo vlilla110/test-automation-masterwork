@@ -11,6 +11,10 @@ public class AccountPage {
         this.driver = driver;
     }
 
+    public WebElement getHeader() {
+        return driver.findElement(By.className("page-header-title"));
+    }
+
     public WebElement getProfile() {
         return driver.findElement(By.linkText("View profile"));
     }
