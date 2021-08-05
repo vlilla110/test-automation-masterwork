@@ -22,3 +22,9 @@ A tesztek az alábbi funkciókat tesztelik:
 - adatok listázása
 - adatok bevitele, módosítása, törlése, mentése
 - kiejelentkezés
+
+Tesztek futtatása gradle projektben allure report generálásával Windows-on: gradlew clean test
+
+Allure report megnyitása terminálban Windows-on: gradlew allureServe
+
+Allure report megnyitása projektben: build/reports/allureReport/index.html
