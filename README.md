@@ -24,5 +24,7 @@ A tesztek az alábbi funkciókat tesztelik:
 - kiejelentkezés
 
 Tesztek futtatása gradle projektben allure report generálásával Windows-on: gradlew clean test
+
 Allure report megnyitása terminálban Windows-on: gradlew allureServe
+
 Allure report megnyitása projektben Windows-on: build/reports/allureReport/index.html
