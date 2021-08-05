@@ -11,6 +11,10 @@ public class UserPage {
         this.driver = driver;
     }
 
+    public WebElement getHeader() {
+        return driver.findElement(By.tagName("h1"));
+    }
+
     public WebElement getProfileEditIcon() {
         return driver.findElement(By.className("um-profile-edit-a"));
     }

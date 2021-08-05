@@ -1,5 +1,6 @@
 import Pages.AccountPage;
 import Pages.RegisterPage;
+import Pages.UserPage;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,10 +25,10 @@ public class RegisterTest extends BaseTest {
     @Feature("Registration")
     @Description("Complete registration with all data of user")
     public void registrationSuccessfully() {
-        registerPage.register("UserMe01", "My", "Test01",
-                "test01@test01.com", "testPwd01");
-        AccountPage accountPage = new AccountPage(driver);
-        assertThat(accountPage.getHeader().getText()).isEqualTo("Account");
+        registerPage.register("UserMe14", "My", "Test14",
+                "test01@test14.com", "testPwd14");
+        UserPage userPage = new UserPage(driver);
+        assertThat(userPage.getHeader().getText()).isEqualTo("User");
     }
 
     @Test

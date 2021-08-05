@@ -2,9 +2,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -14,7 +12,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class BaseTest {
     WebDriver driver;
 
-    @BeforeAll
+    @BeforeEach
     public void setup() throws IOException {
         String browser;
         Properties properties = new Properties();
