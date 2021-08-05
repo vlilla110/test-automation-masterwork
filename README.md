@@ -27,4 +27,4 @@ Tesztek futtatása gradle projektben allure report generálásával Windows-on: 
 
 Allure report megnyitása terminálban Windows-on: gradlew allureServe
 
-Allure report megnyitása projektben Windows-on: build/reports/allureReport/index.html
+Allure report megnyitása projektben: build/reports/allureReport/index.html
