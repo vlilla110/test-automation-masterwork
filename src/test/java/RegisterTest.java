@@ -25,8 +25,8 @@ public class RegisterTest extends BaseTest {
     @Feature("Registration")
     @Description("Complete registration with all data of user")
     public void registrationSuccessfully() {
-        registerPage.register("UserMe14", "My", "Test14",
-                "test01@test14.com", "testPwd14");
+        registerPage.register("UserMe15", "My", "Test15",
+                "test01@test15.com", "testPwd15");
         UserPage userPage = new UserPage(driver);
         assertThat(userPage.getHeader().getText()).isEqualTo("User");
     }
