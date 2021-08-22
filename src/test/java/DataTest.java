@@ -130,6 +130,7 @@ public class DataTest extends BaseTest {
         String file = "src/test/resources/blog_posts_list.txt";
         Path filePath = Paths.get(file);
         List<String> fileList = new ArrayList<>(Collections.emptyList());
+        List<String> lines = null;
         homePage.open();
         for (WebElement element : homePage.getListOfBlogs()){
             fileList.add(element.getText());
@@ -141,11 +142,11 @@ public class DataTest extends BaseTest {
             System.out.println("Unable to write the file");
         }
         try {
-            List<String> lines = Files.readAllLines(filePath);
-            assertThat(lines.get(0)).isEqualTo("Post 11");
-            assertThat(lines.get(lines.size()-1)).isEqualTo("Test automation rules");
+            lines = Files.readAllLines(filePath);
         } catch (IOException e) {
             System.out.println("Unable to read the file");
         }
+        assertThat(lines.get(0)).isEqualTo("Post 11");
+        assertThat(lines.get(lines.size()-1)).isEqualTo("Test automation rules");
     }
 }
